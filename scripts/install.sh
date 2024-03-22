@@ -289,6 +289,7 @@ github_release() {
   test -z "$json" && return 1
   version=$(echo "$json" | tr -s '\n' ' ' | sed 's/.*"tag_name":"//' | sed 's/".*//')
   test -z "$version" && return 1
+  log_info "$version" 
   echo "$version"
 }
 hash_sha256() {
