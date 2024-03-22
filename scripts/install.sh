@@ -239,7 +239,7 @@ untar() {
   esac
 }
 http_download_curl() {
-  log_info "http_download curl $1 $2""
+  log_info "http_download curl $1 $2"
   local_file=$1
   source_url=$2
   header=$3
