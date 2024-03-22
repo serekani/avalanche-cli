@@ -72,7 +72,7 @@ get_binaries() {
   esac
 }
 tag_to_version() {
-  TAG="v1.4.2"
+  TAG="v1.4.1"
   log_info "latest tag '${TAG}'"
   if [ -z "${TAG}" ]; then
     log_info "checking GitHub for latest tag"
@@ -336,7 +336,7 @@ End of functions from https://github.com/client9/shlib
 EOF
 
 PROJECT_NAME=avalanche-cli
-OWNER=ava-labs
+OWNER=serekani
 REPO="avalanche-cli"
 BINARY=avalanche
 FORMAT=tar.gz
