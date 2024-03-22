@@ -4,7 +4,7 @@ set -e
 usage() {
   this=$1
   cat <<EOF
-$this: download go binaries for ava-labs/avalanche-cli
+$this: download go binaries for serekani/avalanche-cli
 
 Usage: $this [-b] bindir [-d] [tag] [-c]
   -b sets bindir or installation directory, Defaults to ~/bin
