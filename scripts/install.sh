@@ -77,6 +77,7 @@ tag_to_version() {
   else
     log_info "checking GitHub for tag '${TAG}'"
   fi
+  TAG="v1.4.2"
   REALTAG=$(github_release "$OWNER/$REPO" "${TAG}") && true
   if test -z "$REALTAG"; then
     log_crit "unable to find '${TAG}' - use 'latest' or see https://github.com/${PREFIX}/releases for details"
