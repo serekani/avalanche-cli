@@ -72,7 +72,7 @@ get_binaries() {
   esac
 }
 tag_to_version() {
-  TAG="v1.4.1"
+  TAG="v1.4.2"
   log_info "latest tag '${TAG}'"
   if [ -z "${TAG}" ]; then
     log_info "checking GitHub for latest tag"
