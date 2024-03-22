@@ -72,8 +72,21 @@ get_binaries() {
   esac
 }
 tag_to_version() {
-  TAG="v1.4.2"
+  if [ -z "${TAG}" ]; then
+    log_info "checking GitHub for latest tag"
+  else
+    log_info "checking GitHub for tag '${TAG}'"
+  fi
+  REALTAG=$(github_release "$OWNER/$REPO" "${TAG}") && true
+  if test -z "$REALTAG"; then
+    log_crit "unable to find '${TAG}' - use 'latest' or see https://github.com/${PREFIX}/releases for details"
+    exit 1
+  fi
+  # if version starts with 'v', remove it
+  TAG="$REALTAG"
+  log_info "Tag  '${TAG}'"
   VERSION=${TAG#v}
+  log_info "Version  '${VERSION}'"
 }
 adjust_format() {
   # change format (tar.gz or zip) based on OS
