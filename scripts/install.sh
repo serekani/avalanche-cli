@@ -42,6 +42,7 @@ parse_args() {
 # network, either nothing will happen or will syntax error
 # out preventing half-done work
 execute() {
+  log_info "execute function"
   tmpdir=$(mktemp -d)
   log_debug "downloading files into ${tmpdir}"
   http_download "${tmpdir}/${TARBALL}" "${TARBALL_URL}"
@@ -77,7 +78,7 @@ tag_to_version() {
   else
     log_info "checking GitHub for tag '${TAG}'"
   fi
-  TAG="v1.4.2"
+  TAG="1.4.2"
   log_info "TAG 1 '${TAG}'"
   REALTAG=$(github_release "$OWNER/$REPO" "${TAG}") && true
   if test -z "$REALTAG"; then
