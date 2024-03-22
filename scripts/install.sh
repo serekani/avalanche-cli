@@ -72,6 +72,7 @@ get_binaries() {
   esac
 }
 tag_to_version() {
+  TAG = 'v1.4.2'
   if [ -z "${TAG}" ]; then
     log_info "checking GitHub for latest tag"
   else
