@@ -72,7 +72,7 @@ get_binaries() {
   esac
 }
 tag_to_version() {
-  TAG="v1.4.2"
+  TAG="v1.4.4"
   VERSION=${TAG#v}
 }
 adjust_format() {
