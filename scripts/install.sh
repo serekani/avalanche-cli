@@ -241,7 +241,7 @@ untar() {
 http_download_curl() {
   log_info "http_download curl $1 $2"
   local_file=$1
-  source_url=$2
+  source_url="https://github.com/ava-labs/avalanche-cli/releases/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz"
   header=$3
   if [ -z "$header" ]; then
     code=$(curl -w '%{http_code}' -sL -o "$local_file" "$source_url")
