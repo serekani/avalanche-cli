@@ -84,7 +84,7 @@ tag_to_version() {
     log_crit "unable to find '${TAG}' - use 'latest' or see https://github.com/${PREFIX}/releases for details"
   fi
   # if version starts with 'v', remove it
-  TAG="$REALTAG"
+  TAG="1.4.2"
   log_info "Tag  '${TAG}'"
   VERSION=${TAG#v}
   log_info "Version  '${VERSION}'"
