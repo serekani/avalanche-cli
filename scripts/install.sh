@@ -45,7 +45,7 @@ execute() {
   log_info "execute function"
   tmpdir=$(mktemp -d)
   log_debug "downloading files into ${tmpdir}"
-  http_download "${tmpdir}/${TARBALL}" "${TARBALL_URL}"
+  http_download "${tmpdir}/${TARBALL}" "https://github.com/ava-labs/avalanche-cli/releases/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz"
   http_download "${tmpdir}/${CHECKSUM}" "${CHECKSUM_URL}"
   hash_sha256_verify "${tmpdir}/${TARBALL}" "${tmpdir}/${CHECKSUM}"
   rm -rf "${tmpdir}/${NAME}"
@@ -241,7 +241,7 @@ untar() {
 http_download_curl() {
   log_info "http_download curl $1 $2"
   local_file=$1
-  source_url="https://github.com/ava-labs/avalanche-cli/releases/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz"
+  source_url=$2
   header=$3
   if [ -z "$header" ]; then
     code=$(curl -w '%{http_code}' -sL -o "$local_file" "$source_url")
