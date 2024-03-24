@@ -50,7 +50,6 @@ execute() {
   hash_sha256_verify "${tmpdir}/${TARBALL}" "${tmpdir}/${CHECKSUM}"
   rm -rf "${tmpdir}/${NAME}"
   (cd "${tmpdir}" && untar "${TARBALL}")
-  test ! -d "${BINDIR}" && install -d "${BINDIR}"
   for binexe in $BINARIES; do
     if [ "$OS" = "windows" ]; then
       binexe="${binexe}.exe"
