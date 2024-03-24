@@ -45,7 +45,7 @@ execute() {
   log_info "execute function"
   tmpdir=$(mktemp -d)
   log_debug "downloading files into ${tmpdir}"
-  hash_sha256_verify "${tmpdir}/${TARBALL}" "${tmpdir}/${CHECKSUM}"
+  hash_sha256_verify "/home/ssn/Selva/Company/Avalanche/download/${TARBALL}" "/home/ssn/Selva/Company/Avalanche/download/${CHECKSUM}"
   log_info "download"
   rm -rf "${tmpdir}/${NAME}"
   (cd "${tmpdir}" && untar "${TARBALL}")
