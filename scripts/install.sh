@@ -239,7 +239,7 @@ untar() {
   esac
 }
 http_download_curl() {
-  log_info "http_download curl $1 $2"
+  log_info "http_download curl $1 $2 $3"
   local_file=$1
   source_url=$2
   header=$3
@@ -266,6 +266,7 @@ http_download_wget() {
 }
 http_download() {
   log_info "http_download $2"
+  log_info "all parm $@"
   log_debug "http_download $2"
   if is_command curl; then
     http_download_curl "$@"
