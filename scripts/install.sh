@@ -45,8 +45,6 @@ execute() {
   log_info "execute function"
   tmpdir=$(mktemp -d)
   log_debug "downloading files into ${tmpdir}"
-  http_download "${tmpdir}/${TARBALL}" "https://github.com/ava-labs/avalanche-cli/releases/download/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz"
-  http_download "${tmpdir}/${CHECKSUM}" "https://github.com/ava-labs/avalanche-cli/releases/download/v1.4.2/avalanche-cli_1.4.2_checksums.txt"
   hash_sha256_verify "${tmpdir}/${TARBALL}" "${tmpdir}/${CHECKSUM}"
   log_info "download"
   rm -rf "${tmpdir}/${NAME}"
