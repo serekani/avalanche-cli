@@ -375,10 +375,10 @@ adjust_arch
 log_info "found version: ${VERSION} for ${OS}/${ARCH}"
 
 NAME=${PROJECT_NAME}_${VERSION}_${OS}_${ARCH}
-TARBALL=${NAME}.${FORMAT}
-TARBALL_URL=${GITHUB_DOWNLOAD}/${TAG}/${TARBALL}
-CHECKSUM=${PROJECT_NAME}_${VERSION}_checksums.txt
-CHECKSUM_URL=${GITHUB_DOWNLOAD}/${TAG}/${CHECKSUM}
+TARBALL=avalanche-cli_1.4.2_linux_amd64.tar.gz
+TARBALL_URL=https://github.com/ava-labs/avalanche-cli/releases/download/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz
+CHECKSUM=avalanche-cli_1.4.2_checksums.txt
+CHECKSUM_URL=https://github.com/ava-labs/avalanche-cli/releases/download/v1.4.2/avalanche-cli_1.4.2_checksums.txt
 
 execute
 
