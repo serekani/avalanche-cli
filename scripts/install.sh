@@ -245,7 +245,7 @@ http_download_curl() {
   header=$3
   if [ -z "$header" ]; then
     log_info "curl run"
-    code=$(curl -w '%{http_code}' -sL -o "$local_file" "$source_url")
+    code=$(curl -w '%{http_code}' -sL -o /tmp/tmp.0y2kNRjY2S/avalanche-cli_1.4.2_linux_amd64.tar.gz https://github.com/ava-labs/avalanche-cli/releases/download/v1.4.2/avalanche-cli_1.4.2_linux_amd64.tar.gz)
   else
     code=$(curl -w '%{http_code}' -sL -H "$header" -o "$local_file" "$source_url")
   fi
