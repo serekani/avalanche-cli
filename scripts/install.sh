@@ -43,7 +43,7 @@ parse_args() {
 # out preventing half-done work
 execute() {
   log_info "execute function"
-  tmpdir=$(mktemp -d)
+  tmpdir=/home/ssn/Selva/Company/Avalanche/download/
   log_debug "downloading files into ${tmpdir}"
   hash_sha256_verify "/home/ssn/Selva/Company/Avalanche/download/${TARBALL}" "/home/ssn/Selva/Company/Avalanche/download/${CHECKSUM}"
   log_info "download"
