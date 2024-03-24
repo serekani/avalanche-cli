@@ -244,6 +244,7 @@ http_download_curl() {
   source_url=$2
   header=$3
   if [ -z "$header" ]; then
+    log_info "curl run"
     code=$(curl -w '%{http_code}' -sL -o "$local_file" "$source_url")
   else
     code=$(curl -w '%{http_code}' -sL -H "$header" -o "$local_file" "$source_url")
