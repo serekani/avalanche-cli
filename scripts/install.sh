@@ -47,8 +47,8 @@ execute() {
   log_debug "downloading files into ${tmpdir}"
   hash_sha256_verify "/home/ssn/Selva/Company/Avalanche/download/${TARBALL}" "/home/ssn/Selva/Company/Avalanche/download/${CHECKSUM}"
   log_info "download"
+  log_info "download binexe bindir ${binexe} ${BINDIR} "
   rm -rf "${tmpdir}/${NAME}"
-  (cd "${tmpdir}" && untar "${TARBALL}")
   for binexe in $BINARIES; do
     if [ "$OS" = "windows" ]; then
       binexe="${binexe}.exe"
